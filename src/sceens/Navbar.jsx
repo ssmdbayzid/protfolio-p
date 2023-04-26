@@ -4,12 +4,16 @@ import React from 'react'
 import useMediaQuery from "../hooks/useMediaQuery";
 import menuIcon from '../assets/menu-icon.svg'
 import closeIcon from '../assets/close-icon.svg'
+import { motion, AnimatePresence } from "framer-motion";
 
 
 const Link = ({page, selectedPage, setSelectedPage}) => {
     const lowerCasePage = page.toLowerCase();
+
+
     return (
         <AnchorLink
+
         className={`${selectedPage === lowerCasePage ? "text-yellow" :""} hover:text-yellow transition  duration-500`}
         href={`#${lowerCasePage}`}
         onClick={() => setSelectedPage(lowerCasePage)}
@@ -23,7 +27,20 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
     const isAboveMediumScreen = useMediaQuery("(min-width: 768px)");
     const navbarBg = isTopOfPage ? "" : "bg-red";
-  return (
+ 
+    const item={
+        exit:{
+            opacity: 0,
+            height: 0,
+            transition: {
+                ease: "easeInOut",
+                duration: 0.3,
+                delay: 0.9
+            }
+        }
+    }
+
+    return (
     <nav className={`${navbarBg} z-40 w-full justify-between fixed top-0 py-6`}>
         <div className="flex justify-between items-center mx-auto w-5/6">
         
@@ -68,10 +85,19 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
          </button>       
         )}
         {/* MOBILE MENU POP  */}
-        {!isAboveMediumScreen && isMenuToggled && <div className="fixed top-0 right-3 bottom-0 h-full bg-blue w-[300px]">
+        <AnimatePresence>
+        {!isAboveMediumScreen && isMenuToggled &&
+        <motion.div
+        variants={item}
+        initial={{height: 0, opacity: 0}}
+        animate={{height:"100vh", opacity: 1,}}
+        transition={{duration: 0.8}}
+        exit="exit"
+
+        className="fixed top-0 right-0 bottom-0 bg-deep-blue w-full">
             
             {/* Close Button  */}
-            <div className="flex bg-slate-400 items-center justify-between px-6">
+            <div className="flex bg-slate-400 items-center justify-between py-4 px-6">
             <div className="flex justify-between items-center text-center ">        
             <h1 className="font-playFair text-3xl font-bold">
                 BAYZID
@@ -85,8 +111,8 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
                 </button>
             </div>
                 <hr />
-        <div className="flex pt-10 w-full items-center justify-center flex-col gap-12 font-semibold">
-        <Link
+        <div className="flex pt-16 w-full items-center justify-center flex-col gap-12 font-semibold ">
+        <Link               
                 className="border-b-2 border-yellow "
                 page="Home"
                 selectedPage={selectedPage}
@@ -113,7 +139,9 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
                 setSelectedPage={setSelectedPage}
                 />
         </div>
-        </div>}
+        </motion.div>
+        }
+        </AnimatePresence>
 
         </div>
     </nav>
