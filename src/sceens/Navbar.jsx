@@ -24,21 +24,9 @@ const Link = ({page, selectedPage, setSelectedPage}) => {
 }
 
 const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
-    const [isMenuToggled, setIsMenuToggled] = useState(false);
+    const [isMenuToggled, setIsMenuToggled] = useState(false);   
     const isAboveMediumScreen = useMediaQuery("(min-width: 768px)");
     const navbarBg = isTopOfPage ? "" : "bg-red";
- 
-    const item={
-        exit:{
-            opacity: 0,
-            height: 0,
-            transition: {
-                ease: "easeInOut",
-                duration: 0.3,
-                delay: 0.9
-            }
-        }
-    }
 
     return (
     <nav className={`${navbarBg} z-40 w-full justify-between fixed top-0 py-6`}>
@@ -85,16 +73,10 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
          </button>       
         )}
         {/* MOBILE MENU POP  */}
-        <AnimatePresence>
-        {!isAboveMediumScreen && isMenuToggled &&
-        <motion.div
-        variants={item}
-        initial={{height: 0, opacity: 0}}
-        animate={{height:"100vh", opacity: 1,}}
-        transition={{duration: 0.8}}
-        exit="exit"
-
-        className="fixed top-0 right-0 bottom-0 bg-deep-blue w-full">
+        
+        {!isAboveMediumScreen && 
+        <div
+        className={`absolute ${isMenuToggled ? "right-0" : "-right-[100%]"}  z-20  h-full bottom-0 bg-deep-blue w-full transition-all duration-500`}>
             
             {/* Close Button  */}
             <div className="flex bg-slate-400 items-center justify-between py-4 px-6">
@@ -104,8 +86,8 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
             </h1>
             </div>
                 <button
-                className=" bg-red/70 my-3 right-5 top-2 rounded-full  p-2"
-                onClick={()=> setIsMenuToggled(!isMenuToggled)}
+                className=" bg-red/70 hover:bg-red my-3 right-5 top-2 rounded-full  p-2"
+                onClick={()=> setIsMenuToggled(!isMenuToggled)}  
                 >
                 <img src={closeIcon} alt="close-icon" />
                 </button>
@@ -139,10 +121,8 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
                 setSelectedPage={setSelectedPage}
                 />
         </div>
-        </motion.div>
-        }
-        </AnimatePresence>
-
+        </div>
+        }  
         </div>
     </nav>
   )
