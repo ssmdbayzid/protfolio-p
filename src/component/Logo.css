@@ -1,0 +1,26 @@
+.circle {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url("../assets/logoPhoto.png");
+    background-size: cover;
+    border-radius: 50%;
+    filter: brightness(1.3) contrast(1);
+}
+
+.text {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}

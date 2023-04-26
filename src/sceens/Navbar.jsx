@@ -5,6 +5,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import menuIcon from '../assets/menu-icon.svg'
 import closeIcon from '../assets/close-icon.svg'
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "../component/Logo";
 
 
 const Link = ({page, selectedPage, setSelectedPage}) => {
@@ -32,9 +33,10 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
     <nav className={`${navbarBg} z-40 w-full justify-between fixed top-0 py-6`}>
         <div className="flex justify-between items-center mx-auto w-5/6">
         
-        <h1 className="font-playFair text-3xl font-bold">
-            BAYZID
+        <h1 className="font-playFair text-3xl font-bold">            
+            <Logo />
         </h1>
+
 
             {/* DESKTOP NAVBAR */}
 
