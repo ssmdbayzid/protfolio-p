@@ -76,7 +76,7 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
         
         {!isAboveMediumScreen && 
         <div
-        className={`absolute ${isMenuToggled ? "right-0" : "-right-[100%]"}  z-20  h-full bottom-0 bg-deep-blue w-full transition-all duration-500`}>
+        className={`fixed ${isMenuToggled ? "right-0" : "-right-[100%]"} z-20 h-full bottom-0 bg-deep-blue w-full transition-all duration-500`}>
             
             {/* Close Button  */}
             <div className="flex bg-slate-400 items-center justify-between py-4 px-6">
