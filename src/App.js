@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
 import Navbar from "./sceens/Navbar";
 import DotGroup from "./sceens/DotGroup";
+import Landing from "./sceens/Landing";
 
 
 function App() {
@@ -36,6 +37,13 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
          />
+         <div className="w-5/6 mx-auto h-full">         
+        <Landing
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}                 
+        /> 
+         </div>
+         
     </div>
   );
 }

@@ -34,7 +34,8 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage }) => {
         <div className="flex justify-between items-center mx-auto w-5/6">
         
         <h1 className="font-playFair text-3xl font-bold">            
-            <Logo />
+            {/* <Logo /> */}
+            Bayzid
         </h1>
 
 
