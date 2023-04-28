@@ -2,6 +2,8 @@ import React from 'react'
 import useMediaQuery from '../hooks/useMediaQuery'
 import img from '../assets/profile-image.png'
 import { motion } from 'framer-motion'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import SocialMedia from '../component/SocialMedia'
 
 
 const Landing = ({setSelectedPage}) => {
@@ -32,12 +34,58 @@ const Landing = ({setSelectedPage}) => {
         }}
         className="">
             <p className="text-6xl selection:text-yellow font-playFair text-red font-semibold text-playFair z-10 text-center md:text-start">
-                S S <span className="xs:relative text-yellow xs:font-semibold z-20 xs:before:content-brush before:absolute before:-left-[25px] before:-top-[80px] xs:before:z-[-1] ">Bayzid</span>
+                S S <span className="xs:relative text-yellow xs:font-semibold z-20 xs:before:content-brush before:absolute before:-left-[25px] before:-top-[70px] xs:before:z-[-1] ">Bayzid</span>
             </p>
-            <p className="mt-10 mb-7 text-sm text-center md:text-start pl-5">
+            <p className="mt-10 mb-7  text-md text-center md:text-start">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tenetur eligendi, voluptatem dolore ad reiciendis!
             </p>
-        </motion.div>                                               
+        </motion.div>   
+        <div className="flex justify-center md:justify-start mt-4">
+          <motion.div
+          className=" flex  "
+          initial="hidden"
+          whileInView="visible"
+          viewport={{once:false, amount: 0.5} }
+          transition={{delay: 0.2, duration: 0.5 }}
+          variants={{
+            hidden: {opacity: 0, x: -50 },
+            visible: {opacity: 1, x: 0}
+          }}
+          >
+        <AnchorLink
+        className="bg-gradient-rainblue hover:bg-blue hover:text-white px-7 flex justify-center items-center text-deep-blue font-semibold  cursor-pointer transition duration-500 "
+        onClick={()=>setSelectedPage("contact")}
+        href="#contact"
+        >
+          Contact Me
+        </AnchorLink>
+         
+        <AnchorLink>
+        <div className="bg-gradient-rainblue rounded-r-sm py-0.5 pr-0.5">
+          <div className="bg-deep-blue hover:text-red text-white transition duration-500 px-10 font-playFair flex items-center justify-center md:justify-start py-3 font-semibold cursor-pointer ">
+          Let's Talk
+          </div>
+
+        </div>
+        </AnchorLink>
+          </motion.div>
+          </div>   
+
+        <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{once: true, amount: 0.5}}
+        transition={{delay: 0.4, duration: 0.5}}
+        variants={{
+          hidden:{opacity: 0, x: - 50},
+          visible:{opacity: 1, x: 0}
+        }}
+        className=""
+
+        >
+          <SocialMedia />
+        </motion.div>
+                                                 
       </div>
     </div>
   )
