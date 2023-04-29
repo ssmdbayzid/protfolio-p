@@ -61,7 +61,7 @@ const Landing = ({setSelectedPage}) => {
         </AnchorLink>
          
         <AnchorLink>
-        <div className="bg-gradient-rainblue rounded-r-sm py-0.5 pr-0.5">
+        <div className="bg-gradient-rainbow rounded-r-sm py-0.5 pr-0.5">
           <div className="bg-deep-blue hover:text-red text-white transition duration-500 px-10 font-playFair flex items-center justify-center md:justify-start py-3 font-semibold cursor-pointer ">
           Let's Talk
           </div>

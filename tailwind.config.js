@@ -25,7 +25,7 @@ module.exports = {
       }),
 
       fontFamily: {
-        playFair: ["Playfair Display", "serif"],
+        playFair: ["Playfair", "serif"],
         opensans : ["Open Sans", "sans-serif"],
       },
 

@@ -3,6 +3,7 @@ import useMediaQuery from "./hooks/useMediaQuery";
 import Navbar from "./sceens/Navbar";
 import DotGroup from "./sceens/DotGroup";
 import Landing from "./sceens/Landing";
+import Skills from "./sceens/Skills";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}                 
         /> 
+        <Skills  />
          </div>
          
     </div>
