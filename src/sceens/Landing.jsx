@@ -14,12 +14,30 @@ const Landing = ({setSelectedPage}) => {
       <div className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32">
         {
             isAboveMediumScreens ? 
-            ( <div className="relative z-0 ml-20 before:absolute before:z-[-1] before:-top-20 before:-left-20 before:h-full before:border-blue  before:border-4 before:rounded-t-[400px] before:w-full before:max-w-[400px]">
+            ( <motion.div              
+              initial="hidden"
+              whileInView="visible"
+              viewport={{once: true, amount: 0.5}}
+              transition={{duration: 0.9}}
+              variants={{
+                hidden:{opacity: 0, scale: 0.2},
+                visible:{opacity: 1, scale: 1}
+              }}
+             className="relative z-0 ml-20 before:absolute before:z-[-1] before:-top-20 before:-left-20 before:h-full before:border-blue  before:border-4 before:rounded-t-[400px] before:w-full before:max-w-[400px]">
                 <img src={img} alt="profileImage" className="hover:saturate-200 hover:filter transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />
 
-            </div> )
+            </motion.div> )
             :
-            ( <img src={img} alt="profileImage" className="hover:saturate-200 hover:filter transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />)
+            ( <motion.img
+              initial="hidden"
+              whileInView="visible"
+              viewport={{once: true, amount: 0.5}}
+              transition={{duration: 0.5}}
+              variants={{
+                hidden:{opacity: 0, scale: 0.5},
+                visible:{opacity: 1, scale: 1}
+              }}
+              src={img} alt="profileImage" className="hover:saturate-200 hover:filter transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />)
         }
       </div>
       <div className="z-30 basis-2/5 mt-12 md:mt-32">

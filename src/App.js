@@ -5,6 +5,7 @@ import DotGroup from "./sceens/DotGroup";
 import Landing from "./sceens/Landing";
 import Skills from "./sceens/Skills";
 import Projects from "./sceens/Projects";
+import Testimonial from "./sceens/Testimonial";
 
 
 function App() {
@@ -47,6 +48,8 @@ function App() {
         <Skills  />
         
          <Projects />
+
+         <Testimonial />
          </div>
 
          
