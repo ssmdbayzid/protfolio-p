@@ -4,6 +4,7 @@ import Navbar from "./sceens/Navbar";
 import DotGroup from "./sceens/DotGroup";
 import Landing from "./sceens/Landing";
 import Skills from "./sceens/Skills";
+import Projects from "./sceens/Projects";
 
 
 function App() {
@@ -44,7 +45,10 @@ function App() {
           setSelectedPage={setSelectedPage}                 
         /> 
         <Skills  />
+        
+         <Projects />
          </div>
+
          
     </div>
   );
