@@ -7,6 +7,7 @@ import Skills from "./sceens/Skills";
 import Projects from "./sceens/Projects";
 import Testimonial from "./sceens/Testimonial";
 import Contact from "./sceens/Contact";
+import Footer from "./sceens/Footer";
 
 
 function App() {
@@ -53,6 +54,8 @@ function App() {
          <Testimonial />
 
          <Contact />
+
+         <Footer />
          </div>
 
          
