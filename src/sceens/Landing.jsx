@@ -1,6 +1,6 @@
 import React from 'react'
 import useMediaQuery from '../hooks/useMediaQuery'
-import img from '../assets/profile-image.png'
+import img from '../assets/pp-photo.jpg'
 import { motion } from 'framer-motion'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import SocialMedia from '../component/SocialMedia'
@@ -24,7 +24,7 @@ const Landing = ({setSelectedPage}) => {
                 visible:{opacity: 1, scale: 1}
               }}
              className="relative z-0 ml-20 before:absolute before:z-[-1] before:-top-20 before:-left-20 before:h-full before:border-blue  before:border-4 before:rounded-t-[400px] before:w-full before:max-w-[400px]">
-                <img src={img} alt="profileImage" className="hover:saturate-200 hover:filter transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />
+                <img src={img} alt="profileImage" className=" rounded-t-[400px] hover:saturate-200 hover:filter transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />
 
             </motion.div> )
             :
@@ -37,7 +37,7 @@ const Landing = ({setSelectedPage}) => {
                 hidden:{opacity: 0, scale: 0.5},
                 visible:{opacity: 1, scale: 1}
               }}
-              src={img} alt="profileImage" className="hover:saturate-200 hover:filter transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />)
+              src={img} alt="profileImage" className="rounded-t-[400px] hover:saturate-200 hover:filter transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />)
         }
       </div>
       <div className="z-30 basis-2/5 mt-12 md:mt-32">

@@ -4,7 +4,7 @@ import React from 'react'
 const Testimonial = () => {
     const testimonialStyles = `mx-auto relative max-w-[400px] h-[350px] flex flex-col justify-end pt-16 mt-48 before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2`
   return (
-    <section id="testimonial" className="pt-32 pb-16">
+    <section id="testimonial" className="pt-16 pb-16">
       <motion.div
       initial="hidden"
       whileInView="visible"
@@ -39,7 +39,7 @@ const Testimonial = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{once:true, amount: 0.5}}
-        transition={{duration: 0.5}}
+        transition={{delay:0.2, duration: 0.5}}
         variants={{
           hidden: {opacity: 0, scale: 0.8},
           visible: {opacity: 1, scale: 1}
@@ -53,7 +53,7 @@ const Testimonial = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{once:true, amount: 0.5}}
-        transition={{duration: 0.5}}
+        transition={{delay:0.4, duration: 0.5}}
         variants={{
           hidden: {opacity: 0, scale: 0.8},
           visible: {opacity: 1, scale: 1}

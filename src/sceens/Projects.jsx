@@ -21,7 +21,7 @@ if(projectsData){
 
 const Projects = () => {
   return (
-    <section id="projcts" className="pt-10 md:pt-24 pb-48">
+    <section id="projcts" className="pt-10 md:pt-24 pb-10">
       <motion.div
       className="md:w-1/2 mx-auto text-center mb-10"
       initial="hidden"
